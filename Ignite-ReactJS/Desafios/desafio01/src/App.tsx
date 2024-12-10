@@ -3,9 +3,7 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <div>KEKERITOS</div>
-      <div>KEKERITOS</div>
-      <div>KEKERITOS</div>
+      <header className="bg-gray700">AQUI HAVERA UM HEADER</header>
     </div>
   );
 }

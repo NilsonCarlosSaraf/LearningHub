@@ -1,17 +1,15 @@
+import { Input } from "./components/Input";
+import rocket from "../../imgs/rocket.png";
+import todo from "../../imgs/todo.png";
+
 export function Header() {
   return (
-    <header className="bg-gray700 absolute h-60 flex justify-center items-end w-full">
-      <div>todo</div>
-      <div className="flex gap-x-4 relative -bottom-4">
-        <input
-          type="text"
-          placeholder="Adicione uma nova tarefa"
-          className="bg-gray300 h-8 rounded w-80 px-2 text-justify"
-        />
-        <button className="bg-blueDark rounded w-20 h-8 text-white">
-          Criar
-        </button>
+    <header className="bg-gray700 absolute h-60 flex flex-col items-center justify-end w-full">
+      <div className="flex gap-x-2 items-center">
+        <img src={rocket} alt="rocketImage" />
+        <img src={todo} alt="todoImage" />
       </div>
+      <Input />
     </header>
   );
 }

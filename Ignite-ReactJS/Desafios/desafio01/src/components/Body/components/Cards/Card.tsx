@@ -1,10 +1,21 @@
+import { useState } from "react";
 import CheckCircle from "./components/CheckCircle";
 
 export function Card({ task }: { task: string }) {
+  const [isChecked, setIsChecked] = useState(false);
+
+  function handleCheck() {
+    setIsChecked((state) => !state);
+  }
+
   return (
     <div className="h-20 w-full rounded p-4 flex items-center justify-center gap-x-4 bg-gray500 text-gray100">
-      <CheckCircle />
-      <p className="flex-grow">{task}</p>
+      <CheckCircle handleCheck={handleCheck} isChecked={isChecked} />
+      {!isChecked ? (
+        <p className="flex-grow">{task}</p>
+      ) : (
+        <p className="flex-grow line-through text-gray300">{task}</p>
+      )}
     </div>
   );
 }

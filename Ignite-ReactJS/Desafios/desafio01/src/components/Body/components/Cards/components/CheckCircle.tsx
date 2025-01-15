@@ -1,13 +1,14 @@
 import { Check } from "phosphor-react";
-import { useState } from "react";
 
-export default function CheckCircle() {
-  const [isChecked, setisChecked] = useState(false);
+interface CheckCircleProps {
+  handleCheck: () => void;
+  isChecked: boolean;
+}
 
-  function handleCheck() {
-    setisChecked((state) => !state);
-  }
-
+export default function CheckCircle({
+  handleCheck,
+  isChecked,
+}: CheckCircleProps) {
   return !isChecked ? (
     <div
       id="circle"

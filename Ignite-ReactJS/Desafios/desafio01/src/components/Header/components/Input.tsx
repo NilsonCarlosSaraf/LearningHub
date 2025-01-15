@@ -21,7 +21,7 @@ export function Input({ tasks, setTasks }: InputProps) {
       <input
         type="text"
         placeholder="Adicione uma nova tarefa"
-        className="bg-gray500 h-8 rounded w-80 px-2 text-justify"
+        className="bg-gray500 h-8 rounded w-80 px-2 text-justify text-gray-100"
         onChange={handleInputChange}
       />
       <button

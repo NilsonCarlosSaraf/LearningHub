@@ -1,15 +1,17 @@
 import { useState } from "react";
 
-export function Input() {
+interface InputProps {
+  tasks: string[];
+  setTasks: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+export function Input({ tasks, setTasks }: InputProps) {
   const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState<string[]>([]);
 
   function handleCreateTask() {
     setTasks([...tasks, task]);
     setTask("");
   }
-
-  console.log(tasks);
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     setTask(event.target.value);

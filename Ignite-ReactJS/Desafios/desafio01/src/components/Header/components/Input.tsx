@@ -11,7 +11,7 @@ export function Input({ tasks, setTasks }: InputProps) {
 
   function handleCreateTask() {
     if (task.trim() === "") {
-      setError("O campo nao pode ficar vazio");
+      setError("Você não pode adicionar uma tarefa vazia!");
 
       return;
     }
@@ -41,7 +41,9 @@ export function Input({ tasks, setTasks }: InputProps) {
           Criar
         </button>
       </div>
-      {error && <p className="text-red-500">{error}</p>}
+      <div className="absolute pt-4">
+        {error && <p className="text-red-500">{error}</p>}
+      </div>
     </div>
   );
 }

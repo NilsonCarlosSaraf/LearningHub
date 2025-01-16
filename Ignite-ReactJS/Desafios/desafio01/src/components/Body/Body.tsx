@@ -1,3 +1,4 @@
+import { Note } from "phosphor-react";
 import { Card } from "./components/Cards/Card";
 
 export function Body({ tasks }: { tasks: string[] }) {
@@ -12,10 +13,10 @@ export function Body({ tasks }: { tasks: string[] }) {
           ))}
         </section>
       ) : (
-        <section className="bg-red-400 z-10">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam ut nam
-          quos doloribus deleniti fugit sunt expedita beatae, quidem itaque.
-          Quae, nisi natus. Iste accusamus magni sit doloribus quia aliquam?
+        <section className="flex flex-col items-center gap-y-2 text-gray-400">
+          <Note size={64} />
+          <p className="bold text-lg">Você ainda não tem tarefas cadastradas</p>
+          <p className="text-g">Crie tarefas e organize seus itens a fazer</p>
         </section>
       )}
     </body>

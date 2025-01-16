@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CheckCircle from "./components/CheckCircle";
+import { Trash } from "phosphor-react";
 
 export function Card({ task }: { task: string }) {
   const [isChecked, setIsChecked] = useState(false);
@@ -16,6 +17,9 @@ export function Card({ task }: { task: string }) {
       ) : (
         <p className="flex-grow line-through text-gray300">{task}</p>
       )}
+      <button>
+        <Trash size={24} className="text-gray-400" />
+      </button>
     </div>
   );
 }

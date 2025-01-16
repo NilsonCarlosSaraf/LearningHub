@@ -18,7 +18,7 @@ export function Card({ task }: { task: string }) {
         <p className="flex-grow line-through text-gray300">{task}</p>
       )}
       <button>
-        <Trash size={24} className="text-gray-400" />
+        <Trash size={24} className="text-gray-400 hover:text-red-400" />
       </button>
     </div>
   );

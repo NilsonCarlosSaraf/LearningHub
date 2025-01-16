@@ -35,7 +35,7 @@ export function Input({ tasks, setTasks }: InputProps) {
           value={task}
         />
         <button
-          className="bg-blueDark rounded w-20 h-8 text-white"
+          className="bg-blueDark rounded w-20 h-8 text-white hover:bg-blue-500"
           onClick={handleCreateTask}
         >
           Criar

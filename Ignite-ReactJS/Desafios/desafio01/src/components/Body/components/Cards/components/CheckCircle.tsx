@@ -12,13 +12,13 @@ export default function CheckCircle({
   return !isChecked ? (
     <div
       id="circle"
-      className="h-6 w-6 rounded-full flex-shrink-0 border-blue-400 border-solid border-2 "
+      className="h-5 w-5 rounded-full flex-shrink-0 border-blue-400 border-solid border-2 hover:border-green-300"
       onClick={handleCheck}
     />
   ) : (
     <div
       id="circle"
-      className="h-6 w-6 rounded-full flex-shrink-0 bg-purpleDark flex items-center justify-center"
+      className="h-5 w-5 rounded-full flex-shrink-0 bg-purpleDark flex items-center justify-center"
       onClick={handleCheck}
     >
       <Check size={16} />

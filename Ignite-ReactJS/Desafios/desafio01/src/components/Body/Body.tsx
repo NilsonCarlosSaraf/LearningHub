@@ -13,7 +13,7 @@ export function Body({ tasks }: { tasks: string[] }) {
           ))}
         </section>
       ) : (
-        <section className="flex flex-col items-center gap-y-2 text-gray-400 pt-4 border-t-2 border-solid border-gray-500  w-1/3">
+        <section className="flex flex-col items-center text-gray-400 pt-4 border-t-2 border-solid border-gray-500  w-1/3">
           <Note size={64} />
           <p className="bold text-lg">Você ainda não tem tarefas cadastradas</p>
           <p className="text-g">Crie tarefas e organize seus itens a fazer</p>

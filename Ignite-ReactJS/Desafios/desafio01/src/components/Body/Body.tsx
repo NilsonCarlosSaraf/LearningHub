@@ -8,15 +8,15 @@ export function Body({ tasks }: { tasks: string[] }) {
     <body className="bg-gray600 h-screen flex flex-col items-center pt-16">
       <section className="flex w-1/3 justify-between p-2">
         <div className="flex gap-2">
-          <p className="text-blue-300 bold">Tarefas criadas</p>
+          <p className="text-blue-400">Tarefas criadas</p>
           <div className="bg-gray500 rounded-full text-gray-100 px-3 justify-center flex">
-            5
+            {tasks.length}
           </div>
         </div>
         <div className="flex gap-2">
-          <p className="text-purple-400">Concluídas</p>
+          <p className="text-purpleDark">Concluídas</p>
           <div className="bg-gray500 rounded-full text-gray-100 px-3">
-            2 de 5
+            2 de {tasks.length}
           </div>
         </div>
       </section>

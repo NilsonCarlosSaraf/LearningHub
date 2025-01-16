@@ -11,7 +11,7 @@ export function Body({
   console.log(tasks.length);
 
   return (
-    <body className="bg-gray600 h-screen flex flex-col items-center pt-16">
+    <div className="bg-gray600 h-screen flex flex-col items-center pt-16">
       <section className="flex w-1/3 justify-between p-2">
         <div className="flex gap-2">
           <p className="text-blue-400">Tarefas criadas</p>
@@ -43,6 +43,6 @@ export function Body({
           </div>
         )}
       </section>
-    </body>
+    </div>
   );
 }

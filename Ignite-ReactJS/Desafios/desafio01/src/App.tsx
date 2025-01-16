@@ -10,10 +10,10 @@ function App() {
   }
 
   return (
-    <div>
+    <>
       <Header tasks={tasks} setTasks={setTasks} />
       <Body tasks={tasks} onDeleteTask={handleDeleteTask} />
-    </div>
+    </>
   );
 }
 

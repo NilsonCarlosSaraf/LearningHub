@@ -2,7 +2,13 @@ import { useState } from "react";
 import CheckCircle from "./components/CheckCircle";
 import { Trash } from "phosphor-react";
 
-export function Card({ task }: { task: string }) {
+export function Card({
+  task,
+  onDelete,
+}: {
+  task: string;
+  onDelete: (task: string) => void;
+}) {
   const [isChecked, setIsChecked] = useState(false);
 
   function handleCheck() {
@@ -10,7 +16,7 @@ export function Card({ task }: { task: string }) {
   }
 
   function handleDelete() {
-    console.log("Deletando");
+    onDelete(task);
   }
 
   return (

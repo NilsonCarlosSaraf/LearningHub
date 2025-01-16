@@ -1,7 +1,13 @@
 import { Note } from "phosphor-react";
 import { Card } from "./components/Cards/Card";
 
-export function Body({ tasks }: { tasks: string[] }) {
+export function Body({
+  tasks,
+  onDeleteTask,
+}: {
+  tasks: string[];
+  onDeleteTask: (task: string) => void;
+}) {
   console.log(tasks.length);
 
   return (
@@ -24,7 +30,7 @@ export function Body({ tasks }: { tasks: string[] }) {
         {tasks.length !== 0 ? (
           <div className="border-t-2 border-solid border-gray-500 pt-4 gap-y-2 flex flex-col">
             {tasks.map((task) => (
-              <Card task={task} />
+              <Card key={task} task={task} onDelete={onDeleteTask} />
             ))}
           </div>
         ) : (

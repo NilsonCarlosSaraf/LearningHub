@@ -8,7 +8,7 @@ interface headerProps {
 
 export function Header({ tasks, setTasks }: headerProps) {
   return (
-    <header className="bg-gray700 absolute h-60 flex flex-col items-center justify-end w-full">
+    <header className="bg-gray700 h-60 flex flex-col items-center justify-end w-full">
       <Logo />
       <Input tasks={tasks} setTasks={setTasks} />
     </header>

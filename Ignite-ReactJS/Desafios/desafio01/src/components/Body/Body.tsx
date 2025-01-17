@@ -29,8 +29,8 @@ export function Body({
       <section className="h-2/3 w-1/3 ">
         {tasks.length !== 0 ? (
           <div className="border-t-2 border-solid border-gray-500 pt-4 gap-y-2 flex flex-col">
-            {tasks.map((task) => (
-              <Card key={task} task={task} onDelete={onDeleteTask} />
+            {tasks.map((task, index) => (
+              <Card key={index} task={task} onDelete={onDeleteTask} />
             ))}
           </div>
         ) : (

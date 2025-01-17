@@ -1,13 +1,12 @@
 import "./App.css";
+import { Body } from "./components/Body/Body";
+import { Header } from "./components/Header/Header";
 
 function App() {
   return (
     <>
-      <div>oi</div>
-      <div>oi</div>
-      <div>oi</div>
-      <div>oi</div>
-      <div>oi</div>
+      <Header />
+      <Body />
     </>
   );
 }

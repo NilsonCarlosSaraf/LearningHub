@@ -1,3 +1,9 @@
+import { CoffeeCard } from "./CoffeeCard";
+
 export function CoffeeSection() {
-  return <div>COFFEEEE</div>;
+  return (
+    <div>
+      <CoffeeCard />
+    </div>
+  );
 }

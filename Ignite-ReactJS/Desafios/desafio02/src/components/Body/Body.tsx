@@ -3,7 +3,7 @@ import { CoffeeSection } from "./CoffeeSection";
 
 export function Body() {
   return (
-    <body className="bg-blue-300">
+    <body className="bg-[#FAFAFA]">
       <Article />
       <CoffeeSection />
     </body>

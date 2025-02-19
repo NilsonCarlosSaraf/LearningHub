@@ -1,7 +1,9 @@
+import { Header } from "./components/Header";
+
 function App() {
   return (
     <>
-      <div>COMECO DE NOVO PROJETO</div>
+      <Header />
     </>
   );
 }

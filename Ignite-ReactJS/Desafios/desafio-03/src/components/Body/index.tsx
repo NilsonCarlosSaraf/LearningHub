@@ -5,7 +5,7 @@ import { BodyContainer } from "./BodyContainer";
 
 export function Body() {
   return (
-    <div className="flex flex-col justify-center items-center pt-[10rem] w-full">
+    <div className="flex flex-col justify-center items-center pt-[10rem] w-full bg-[#071422]">
       <BodyContainer>
         <SearchBar />
         <CardsContainer>

@@ -1,11 +1,14 @@
-import { Body } from "./components/Body";
-import { Header } from "./components/Header";
+import { Routes, Route } from "react-router-dom";
+import { MainPage } from "./pages/MainPage";
+import { IssuePage } from "./pages/IssuePage";
 
 function App() {
   return (
     <>
-      <Header />
-      <Body />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/issue" element={<IssuePage />} />
+      </Routes>
     </>
   );
 }

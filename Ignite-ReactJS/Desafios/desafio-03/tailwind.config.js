@@ -19,6 +19,8 @@ export default {
         purpleDark:'#5E60CE',
         purpleDefault:'#8284FA',
         redDanger:'#E25858',
+        baseTitle:'#E7EDF4',
+        baseText:'#AFC2D4',
       },
     },
   },

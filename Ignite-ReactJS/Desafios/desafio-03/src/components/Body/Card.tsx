@@ -1,9 +1,12 @@
 export function Card() {
   return (
     <div className="w-[26rem] h-[16.25rem] flex flex-col gap-4 p-4 rounded bg-[#112131]">
-      <h1 className="font-bold text-baseTitle">
-        JavaScript data types and data strctures
-      </h1>
+      <div className="flex justify-between items-center">
+        <h1 className="font-bold text-baseTitle">
+          JavaScript data types and data strctures
+        </h1>
+        <span className="text-baseSpan">Há 1 dia</span>
+      </div>
       <p className="text-baseText">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore
         deserunt, a tempora consequatur, et ullam voluptates accusantium

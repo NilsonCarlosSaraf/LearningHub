@@ -6,7 +6,7 @@ import { ProfileCard } from "../ProfileCard";
 
 export function Body() {
   return (
-    <div className="flex flex-col justify-center items-center pt-[10rem] w-full bg-[#071422]">
+    <div className="flex flex-col justify-center items-center pt-[10rem] w-full bg-[#071422] relative">
       <ProfileCard />
       <BodyContainer>
         <SearchBar />

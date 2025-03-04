@@ -13,6 +13,8 @@ export function Body() {
           <Card />
           <Card />
           <Card />
+          <Card />
+          <Card />
         </CardsContainer>
       </BodyContainer>
     </div>

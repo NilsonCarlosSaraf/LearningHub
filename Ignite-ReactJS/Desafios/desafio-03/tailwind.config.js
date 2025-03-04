@@ -24,6 +24,7 @@ export default {
         baseSpan:'#7B96B2',
         baseSubtitle:'#C4D4E3',
         baseLabel:'#3A536B',
+        baseBorder:'#1C2F41',
       },
     },
   },

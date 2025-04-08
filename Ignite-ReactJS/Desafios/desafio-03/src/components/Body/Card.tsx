@@ -1,4 +1,9 @@
-export function Card() {
+import { getUser } from "../../hooks/User";
+
+export async function Card() {
+  const user = await getUser("NilsonCarlosSaraf");
+  console.log(user); // Log the user data to the console
+
   return (
     <div className="w-[26rem] h-[16.25rem] flex flex-col gap-4 p-4 rounded bg-[#112131]">
       <div className="flex justify-between items-center">

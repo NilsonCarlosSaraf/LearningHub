@@ -1,8 +1,7 @@
-import { getUser } from "../../hooks/User";
+import { user } from "../../hooks/User";
 
-export async function Card() {
-  const user = await getUser("NilsonCarlosSaraf");
-  console.log(user); // Log the user data to the console
+export function Card() {
+  console.log(user);
 
   return (
     <div className="w-[26rem] h-[16.25rem] flex flex-col gap-4 p-4 rounded bg-[#112131]">

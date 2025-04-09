@@ -1,7 +1,9 @@
+import { issues } from "../../hooks/Issues";
 import { user } from "../../hooks/User";
 
 export function Card() {
   console.log(user);
+  console.log(issues);
 
   return (
     <div className="w-[26rem] h-[16.25rem] flex flex-col gap-4 p-4 rounded bg-[#112131]">

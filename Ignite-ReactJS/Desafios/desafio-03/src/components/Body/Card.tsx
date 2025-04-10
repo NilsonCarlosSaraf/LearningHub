@@ -3,7 +3,7 @@ import { user } from "../../hooks/User";
 
 export function Card() {
   console.log("USUARIO:", user);
-  // console.log(issues);
+  console.log(issues);
 
   return (
     <div className="w-[26rem] h-[16.25rem] flex flex-col gap-4 p-4 rounded bg-[#112131]">

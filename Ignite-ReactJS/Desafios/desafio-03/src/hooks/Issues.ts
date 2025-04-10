@@ -13,3 +13,17 @@ export async function fetchRepositoryIssues() {
         throw error;
     }
 }
+
+export const issueByNumber = await fetchRepositoryIssueByNumber();
+
+export async function fetchRepositoryIssueByNumber(issueNumber: number = 1) {
+    try {
+        const response = await axios.get(
+            `https://api.github.com/repos/NilsonCarlosSaraf/LearningHub/issues/${issueNumber}`
+        );
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching issues:', error);
+        throw error;
+    }
+}

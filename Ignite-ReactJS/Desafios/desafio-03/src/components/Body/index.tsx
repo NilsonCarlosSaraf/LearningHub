@@ -3,20 +3,21 @@ import { Card } from "./Card";
 import { SearchBar } from "./SearchBar";
 import { BodyContainer } from "./BodyContainer";
 import { ProfileCard } from "../ProfileCard";
+import { issues } from "../../hooks/Issues";
 
 export function Body() {
+  console.log("ISSUES:", issues);
+
   return (
     <div className="flex flex-col justify-center items-center pt-[10rem] w-full bg-[#071422] relative">
       <ProfileCard />
       <BodyContainer>
         <SearchBar />
         <CardsContainer>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {issues.map((issue) => {
+            const { url, title, body } = issue;
+            return <Card key={url} title={title} body={body} />;
+          })}
         </CardsContainer>
       </BodyContainer>
     </div>

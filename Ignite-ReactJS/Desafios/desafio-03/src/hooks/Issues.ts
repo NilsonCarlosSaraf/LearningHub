@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const issues = await fetchRepositoryIssues();
+export const issues = await getRepositoryIssues();
 
-async function fetchRepositoryIssues() {
+async function getRepositoryIssues() {
     try {
         const response = await axios.get(
             'https://api.github.com/repos/NilsonCarlosSaraf/LearningHub/issues'
@@ -14,9 +14,9 @@ async function fetchRepositoryIssues() {
     }
 }
 
-export const issueByNumber = await fetchRepositoryIssueByNumber();
+export const issueByNumber = await getRepositoryIssueByNumber();
 
-async function fetchRepositoryIssueByNumber(issueNumber: number = 1) {
+async function getRepositoryIssueByNumber(issueNumber: number = 1) {
     try {
         const response = await axios.get(
             `https://api.github.com/repos/NilsonCarlosSaraf/LearningHub/issues/${issueNumber}`

@@ -15,8 +15,15 @@ export function Body() {
         <SearchBar />
         <CardsContainer>
           {issues.map((issue) => {
-            const { url, title, body } = issue;
-            return <Card key={url} title={title} body={body} />;
+            const { url, title, body, updated_at } = issue;
+            return (
+              <Card
+                key={url}
+                title={title}
+                body={body}
+                updated_at={updated_at}
+              />
+            );
           })}
         </CardsContainer>
       </BodyContainer>

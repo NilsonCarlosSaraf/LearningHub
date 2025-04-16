@@ -1,3 +1,14 @@
-﻿Console.WriteLine("Hello, World!");
+﻿namespace HelloWorld;
 
-Console.WriteLine("Este é meu primeiro programa");
+class Program
+{
+    static void Main()
+    {
+       Carro meuCarro = new Carro();
+
+        meuCarro.Ligar();
+
+        meuCarro.Desligar();
+
+    }
+}

@@ -4,7 +4,9 @@ internal class ContadorDeCaracteres
 {
     string? frase = string.Empty;
 
-    public void ReceberCaracteres() { 
+    public void ReceberCaracteres() {
+
+        Console.WriteLine("Digite uma frase:");
         frase = Console.ReadLine();
 
         Console.WriteLine($"A frase digitada foi: {frase}");

@@ -5,12 +5,18 @@ class Program
 {
     static void Main()
     {
+        ContadorDeCaracteres contador = new ContadorDeCaracteres();
+
         InsertName.ReceiveName();
         Operacoes.ReceberValores();
         Operacoes.SomarValores();
         Operacoes.SubtrairValores();
         Operacoes.MultiplicarValores();
         Operacoes.DividirValores();
+
+        contador.ReceberCaracteres();
+        contador.ContarCaracteres();
+
 
     }
 }

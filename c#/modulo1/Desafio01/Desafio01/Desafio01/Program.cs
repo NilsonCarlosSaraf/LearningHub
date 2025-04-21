@@ -18,6 +18,13 @@ class Program
         contador.ContarCaracteres();
 
 
+        Console.Write("Digite a placa do veículo: ");
+        string? placa = Console.ReadLine();
+
+        bool valida = ValidadorDePlaca.PlacaValida(placa);
+
+        Console.WriteLine(valida ? "Placa valida" : "Placa invalida");
+
     }
 }
 

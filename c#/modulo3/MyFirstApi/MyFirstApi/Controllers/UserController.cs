@@ -37,9 +37,15 @@ public class UserController : ControllerBase
     }
 
     [HttpPut]
-    [Route("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public IActionResult Update([FromRoute] int id, [FromBody] RequestUpdateUserProfileJson request)
+    public IActionResult Update([FromBody] RequestUpdateUserProfileJson request)
+    {
+        return NoContent();
+    }
+
+    [HttpDelete]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public IActionResult Delete()
     {
         return NoContent();
     }

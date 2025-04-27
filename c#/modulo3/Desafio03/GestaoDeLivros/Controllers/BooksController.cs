@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GestaoDeLivros.Communication.Requests;
+using GestaoDeLivros.Communication.Responses;
+using Microsoft.AspNetCore.Mvc;
 namespace GestaoDeLivros.Controllers;
 public class BooksController : LibraryBaseController
 {
@@ -18,8 +20,15 @@ public class BooksController : LibraryBaseController
 
     [HttpPost]
     //[Route("book:{id}/{title}")]
-    public IActionResult Post([FromBody] int id, string title, string author, string genre)
+    public IActionResult Post([FromBody] RequestRegisterNewBook request)
     {
-        return Ok($"book id {id} title {title} registered");    
+        var response = new ResponseRegisterNewBook
+        {
+            Title = request.Title,
+            Author = request.Author,
+            Genre = request.Genre
+        };
+
+        return Created(string.Empty, response);    
     }
 }

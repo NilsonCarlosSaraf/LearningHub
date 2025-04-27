@@ -3,9 +3,23 @@ namespace GestaoDeLivros.Controllers;
 public class BooksController : LibraryBaseController
 {
     [HttpGet]
-    public IActionResult Get()
+    [Route("/allbooks")]
+    public IActionResult GetAll()
     {
-        return Ok("Great");
+        return Ok("You retrieved all registered books!");
     }
 
+    [HttpGet]
+    [Route("/book:{id}")]
+    public IActionResult Get([FromRoute] int id)
+    {
+        return Ok($"retrieved book with id {id}");
+    }
+
+    [HttpPost]
+    //[Route("book:{id}/{title}")]
+    public IActionResult Post([FromBody] int id, string title, string author, string genre)
+    {
+        return Ok($"book id {id} title {title} registered");    
+    }
 }

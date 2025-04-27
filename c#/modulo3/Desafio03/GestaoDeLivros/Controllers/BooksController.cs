@@ -1,19 +1,19 @@
 ﻿using GestaoDeLivros.Communication.Requests;
 using GestaoDeLivros.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
 namespace GestaoDeLivros.Controllers;
 public class BooksController : LibraryBaseController
 {
     [HttpGet]
-    [Route("/allbooks")]
     public IActionResult GetAll()
     {
         return Ok("You retrieved all registered books!");
     }
 
     [HttpGet]
-    [Route("/book:{id}")]
-    public IActionResult Get([FromRoute] int id)
+    [Route("{id}")]
+    public IActionResult GetById([FromRoute] int id)
     {
         return Ok($"retrieved book with id {id}");
     }
@@ -26,9 +26,18 @@ public class BooksController : LibraryBaseController
         {
             Title = request.Title,
             Author = request.Author,
-            Genre = request.Genre
+            Genre = request.Genre,
+            Price = request.Price
+
         };
 
         return Created(string.Empty, response);    
+    }
+
+    [HttpDelete]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [Route("{id}")]
+    public IActionResult Delete() {
+        return NoContent();
     }
 }

@@ -19,7 +19,6 @@ public class BooksController : LibraryBaseController
     }
 
     [HttpPost]
-    //[Route("book:{id}/{title}")]
     public IActionResult Post([FromBody] RequestRegisterNewBook request)
     {
         var response = new ResponseRegisterNewBook

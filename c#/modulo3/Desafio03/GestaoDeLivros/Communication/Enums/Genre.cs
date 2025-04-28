@@ -2,8 +2,8 @@
 {
     public enum Genre
     {
-        Drama,
         Horror,
+        Drama,
         Romance,
         ScienceFiction,
         Fantasy,

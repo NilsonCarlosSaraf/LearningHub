@@ -26,12 +26,11 @@ public class BooksController : LibraryBaseController
         {
             Title = request.Title,
             Author = request.Author,
-            Genre = request.Genre,
+            Genre = request.Genre.ToString(),
             Price = request.Price
-
         };
 
-        return Created(string.Empty, response);    
+        return Created(string.Empty, response);
     }
 
     [HttpDelete]

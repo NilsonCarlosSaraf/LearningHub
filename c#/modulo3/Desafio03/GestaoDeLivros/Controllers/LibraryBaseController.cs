@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoDeLivros.Controllers;
-[Route("api/[controller]")]
+[Route("lib/[controller]")]
 [ApiController]
 public class LibraryBaseController : ControllerBase
 {

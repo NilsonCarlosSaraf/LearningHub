@@ -11,4 +11,10 @@ public class TaskController : TaskBaseController
         return Ok();
     }
 
+    [HttpPost]
+    public IActionResult CreateTask()
+    {
+        return Ok();
+    }
+
 }

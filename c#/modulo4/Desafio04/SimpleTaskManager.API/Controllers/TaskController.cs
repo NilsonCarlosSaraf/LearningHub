@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SimpleTaskManager.Communication.Enums;
 
 namespace SimpleTaskManager.API.Controllers;
 public class TaskController : TaskBaseController
@@ -12,13 +13,14 @@ public class TaskController : TaskBaseController
     }
 
     [HttpGet]
+    [Route("{id}")]
     public IActionResult GetTaskById(int id)
     {
         return Ok();
     }
 
     [HttpPost]
-    public IActionResult CreateTask()
+    public IActionResult CreateTask([FromBody]int id, string name, string description, Priority priority, Status status)
     {
         return Ok();
     }

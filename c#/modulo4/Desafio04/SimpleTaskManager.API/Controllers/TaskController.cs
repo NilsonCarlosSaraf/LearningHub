@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleTaskManager.Application.UseCases.Delete;
+using SimpleTaskManager.Application.UseCases.Register;
 using SimpleTaskManager.Application.UseCases.Update;
 using SimpleTaskManager.Communication.Requests;
 using SimpleTaskManager.Communication.Responses;
@@ -22,9 +23,15 @@ public class TaskController : TaskBaseController
     }
 
     [HttpPost]
+    [ProducesResponseType(typeof(ResponseRegisteredTaskJson), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ResponseErrorsJson), StatusCodes.Status400BadRequest)]
     public IActionResult CreateTask([FromBody] RequestTaskJson request)
     {
-        return Created(string.Empty,request);
+        var useCase = new RegisterTaskUseCase();
+
+        var response = useCase.Execute(request);
+
+        return Created(string.Empty, response);
     }
 
     [HttpPut]

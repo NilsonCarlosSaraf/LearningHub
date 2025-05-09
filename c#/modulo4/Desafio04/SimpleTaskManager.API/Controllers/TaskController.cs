@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SimpleTaskManager.Communication.Enums;
+using SimpleTaskManager.Application.UseCases.Delete;
+using SimpleTaskManager.Communication.Requests;
+using SimpleTaskManager.Communication.Responses;
 
 namespace SimpleTaskManager.API.Controllers;
 public class TaskController : TaskBaseController
 {
     [HttpGet]
-
     public IActionResult GeAllTasks()
     {
    
@@ -20,22 +21,29 @@ public class TaskController : TaskBaseController
     }
 
     [HttpPost]
-    public IActionResult CreateTask([FromBody]int id, string name, string description, Priority priority, Status status)
+    public IActionResult CreateTask([FromBody] RequestTaskJson request)
     {
-        return Ok();
+        return Created(string.Empty,request);
     }
 
     [HttpPut]
-    public IActionResult UpdateTask(int id)
+    [Route("{id}")]
+    public IActionResult UpdateTask([FromRoute] int id,[FromBody] RequestTaskJson request)
     {
         return Ok();
     }
 
     [HttpDelete]
     [Route("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseTaskJson), StatusCodes.Status404NotFound)]
     public IActionResult DeleteTask([FromRoute]int id)
     {
-        return Ok();
+        var useCase = new DeleteTaskByIdUseCase();
+
+        useCase.Execute(id);
+
+        return NoContent();
     }
 
 }

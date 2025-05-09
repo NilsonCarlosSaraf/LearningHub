@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleTaskManager.Application.UseCases.Delete;
+using SimpleTaskManager.Application.UseCases.Update;
 using SimpleTaskManager.Communication.Requests;
 using SimpleTaskManager.Communication.Responses;
 
@@ -28,9 +29,15 @@ public class TaskController : TaskBaseController
 
     [HttpPut]
     [Route("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorsJson), StatusCodes.Status400BadRequest)]
     public IActionResult UpdateTask([FromRoute] int id,[FromBody] RequestTaskJson request)
     {
-        return Ok();
+        var useCase = new UpdateTaskUseCase();
+
+        useCase.Execute(id, request);
+
+        return NoContent();
     }
 
     [HttpDelete]

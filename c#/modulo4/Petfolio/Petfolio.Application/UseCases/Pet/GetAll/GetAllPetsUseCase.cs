@@ -16,6 +16,7 @@ public class GetAllPetsUseCase
                     Name = "Fido",
                     Type = Communication.Enums.PetType.Dog
                 },
+
             }
         };
      }

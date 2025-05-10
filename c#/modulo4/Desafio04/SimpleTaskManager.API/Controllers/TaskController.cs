@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleTaskManager.Application.UseCases.Delete;
+using SimpleTaskManager.Application.UseCases.GetAll;
 using SimpleTaskManager.Application.UseCases.GetById;
 using SimpleTaskManager.Application.UseCases.Register;
 using SimpleTaskManager.Application.UseCases.Update;
@@ -10,10 +11,19 @@ namespace SimpleTaskManager.API.Controllers;
 public class TaskController : TaskBaseController
 {
     [HttpGet]
+    [ProducesResponseType(typeof(ResponseAllTasksJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
     public IActionResult GeAllTasks()
     {
-   
-        return Ok();
+        var useCase = new GetAllTasksUseCase();
+
+        var response = useCase.Execute();
+
+        if(response.Tasks.Any())
+            {
+            return Ok(response);
+        }
+        return NoContent();
     }
 
     [HttpGet]

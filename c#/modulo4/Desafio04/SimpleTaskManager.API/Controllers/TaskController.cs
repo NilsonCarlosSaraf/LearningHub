@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleTaskManager.Application.UseCases.Delete;
+using SimpleTaskManager.Application.UseCases.GetById;
 using SimpleTaskManager.Application.UseCases.Register;
 using SimpleTaskManager.Application.UseCases.Update;
 using SimpleTaskManager.Communication.Requests;
@@ -16,10 +17,16 @@ public class TaskController : TaskBaseController
     }
 
     [HttpGet]
+    [ProducesResponseType(typeof(ResponseTaskJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseTaskJson), StatusCodes.Status404NotFound)]
     [Route("{id}")]
     public IActionResult GetTaskById(int id)
     {
-        return Ok();
+        var useCase = new GetTaskByIdUseCase();
+
+        var response = useCase.Execute(id);
+
+        return Ok(response);
     }
 
     [HttpPost]

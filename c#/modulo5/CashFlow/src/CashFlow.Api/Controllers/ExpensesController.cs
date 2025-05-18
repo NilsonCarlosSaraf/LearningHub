@@ -17,4 +17,11 @@ public class ExpensesController : ControllerBase
 
         return Created(string.Empty, response);
     }
-}
+
+    [HttpPut]
+    public IActionResult Update([FromBody] RequestRegisterExpenseJson request)
+    {
+        var useCase = new RegisterExpenseUseCase();
+        var response = useCase.Execute(request);
+        return Created(string.Empty, response);
+    }

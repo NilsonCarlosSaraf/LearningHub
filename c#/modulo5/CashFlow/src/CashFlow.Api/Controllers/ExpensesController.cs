@@ -18,6 +18,4 @@ public class ExpensesController : ControllerBase
         return Created(string.Empty, response);
     }
 
-    [HttpPut]
-
 }

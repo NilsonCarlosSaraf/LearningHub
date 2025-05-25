@@ -10,14 +10,7 @@ public class RegisterExpenseValidatorTests
     {
         //Arrange
         var validator = new RegisterExpenseValidator();
-        var request = new RequestRegisterExpenseJson
-        {
-            Title = "Apple",
-            Amount = 100,
-            Description="Description",
-            Date = DateTime.Now.AddDays(-1),
-            PaymentType = CashFlow.Communication.Enums.PaymentType.CreditCard
-        };
+        var request = 
         //Act;
         var result = validator.Validate(request);
 

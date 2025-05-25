@@ -14,6 +14,11 @@ public class RequestRegisterExpenseJsonBuilder
             .RuleFor(x => x.Date, f => f.Date.Past())
             .RuleFor(x => x.Amount, f => f.Finance.Amount(min: 1, max: 1000))
             .RuleFor(x => x.PaymentType, f => f.PickRandom<PaymentType>());
+            .RuleFor(x => x.PaymentType, f => f.PickRandom<PaymentType>());
+            .RuleFor(x => x.PaymentType, f => f.PickRandom<PaymentType>());
+            .RuleFor(x => x.PaymentType, f => f.PickRandom<PaymentType>());
+            .RuleFor(x => x.PaymentType, f => f.PickRandom<PaymentType>());
+
     }
 }
 

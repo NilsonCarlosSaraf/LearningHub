@@ -15,7 +15,7 @@ public class RegisterExpenseValidatorTests
         //Act;
         var result = validator.Validate(request);
 
-        //Assert
+        //Assert:
         result.IsValid.Should().BeTrue();
     }
 }

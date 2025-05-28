@@ -6,6 +6,7 @@ namespace Validators.Test.Expenses.Register;
 
 public class RegisterExpenseValidatorTests
 {
+//decorator that declares beginning of the test
     [Fact]
     public void Success()
     {
@@ -17,5 +18,7 @@ public class RegisterExpenseValidatorTests
 
         //Assert:
         result.IsValid.Should().BeTrue();
+
+
     }
 }

@@ -17,4 +17,3 @@ public class RequestRegisterExpenseJsonBuilder
     }
 }
 
-// This class is used to build a JSON request for registering an expense.
